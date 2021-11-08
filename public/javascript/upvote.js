@@ -1,6 +1,3 @@
-const { Json } = require("sequelize/types/lib/utils");
-
-// async funtion to upvote a pos
 async function upvoteClickHandler(event) {
   event.preventDefault();
 
@@ -9,7 +6,7 @@ async function upvoteClickHandler(event) {
   ];
   const response = await fetch("/api/posts/upvote", {
     method: "PUT",
-    body: Json.stringify({
+    body: JSON.stringify({
       post_id: id,
     }),
     headers: {
